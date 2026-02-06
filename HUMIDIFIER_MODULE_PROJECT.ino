@@ -27,7 +27,7 @@ void setup() {
   pixels.show();
 
   dht.begin();
-  delay(2000);
+  delay(1000);
 
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
@@ -72,7 +72,7 @@ void loop() {
     updateLED(h);
   }
 
-  delay(2000);
+  delay(1000);
 }
 
 void handleData() {

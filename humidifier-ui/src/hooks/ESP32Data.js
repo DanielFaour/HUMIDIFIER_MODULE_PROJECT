@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const ESP32_IP = "192.168.0.196";
-const FETCH_INTERVAL = 2000;
+const FETCH_INTERVAL = 3000;
 
 export const useESP32Data = () => {
   const [data, setData] = useState(null);

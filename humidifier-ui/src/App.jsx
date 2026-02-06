@@ -1,30 +1,18 @@
-import { useESP32Data } from './components/ESP32Data';   // adjust path if needed
+import "./App.css";
+import SensorVisuals from "./components/sensorVisuals";
 
 function App() {
-  const { data, error, ip } = useESP32Data();
-
   return (
-    <div style={{ padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
-      <h1>ESP32 Sensor Readings</h1>
-
-      {error && (
-        <div style={{ color: 'crimson', marginBottom: '1rem' }}>
-          Error: {error} (check if ESP32 is running at {ip})
-        </div>
-      )}
-
-      {data ? (
-        <div style={{ fontSize: '1.2rem' }}>
-          <p>
-            <strong>Humidity:</strong> {data.humidity.toFixed(1)} %
-          </p>
-          <p>
-            <strong>Temperature:</strong> {data.temperature.toFixed(1)} °C
-          </p>
-        </div>
-      ) : (
-        <p style={{ color: '#666' }}>Loading sensor data...</p>
-      )}
+    <div>
+      <div id="monitorContainer">
+        <h1>Humidity Monitor</h1>
+        <SensorVisuals />
+        <p>🟢Within tolerable conditions 🔴 Severe conditions</p>
+      </div>
+      <div id="settingsContainer">
+        <h2>Settings</h2>
+        <p>More features coming soon...</p>
+      </div>
     </div>
   );
 }
