@@ -1,7 +1,6 @@
 html,
 body,
 #root {
-  color: #eee;
   margin: 0;
   padding: 0;
   background-color: #333;
@@ -16,12 +15,7 @@ body,
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  background-color: #1c1c1c;
-}
-
-#monitorContainer p {
-  font-size: 1.5rem;
+  background-color: #eee;
 }
 
 #container h1 {
@@ -34,24 +28,47 @@ body,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
   box-sizing: border-box;
-  padding: 3rem;
-  border: 3px solid #eee;
-  border-radius: 50px;
+  padding: 30px;
+  box-shadow:0 0 25px -10px rgba(0,0,0,.5), 0 0 25px -15px rgba(0,0,0,.2); 
+  border-radius: 60px;
+  max-width: 95dvw;
+}
+
+#readingsContainer p {
+  margin: 0;
 }
 
 .readingItem {
-  background-color: #333;
   width: 250px;
-  height: 250px;
-  border-radius: 360px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  padding: 20px;
   justify-content: center;
-  text-align: center;
-  border: 8px solid #eee;
+  /* text-align: center; */
+  /* box-shadow:0 0 15px -10px rgba(0,0,0,1), 0 0 25px -15px rgba(0,0,0,.2);  */
+}
+
+/* .readingItem:last-child {
+  border-left: #333 solid 1px;
+} */
+
+.readingName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+.readingNumber {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+#indicator {
+  height: 10px;
+  background-color: rgba(255,0,0,.5);
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 /* Settings Container */
@@ -61,4 +78,5 @@ body,
   flex-direction: column;
   align-items: center;
   width: 100%;
+  color: #eee;
 }

@@ -13,15 +13,17 @@ export const SensorVisuals = () => {
 
       {data ? (
         <div id="readingsContainer">
-            <div className="readingItem" style={{borderColor: data.humidity >= 60 || data.humidity <= 30 ? "red" : "green"}}>
-                <p>
-                    <strong>Humidity:</strong> <br></br> {data.humidity.toFixed(1)} %
-                </p>
+            <div className="readingItem">
+                <p className="readingName">Humidity:</p>
+                <p className="readingNumber">{data.humidity.toFixed(0)} %</p>
+                <p>Indicator:</p>
+                <div id="indicator" style={{width: `${data.humidity}%`, backgroundColor: data.humidity > 60 || data.humidity < 30 ? "red" : "green"}}></div>
             </div>
-            <div className="readingItem" style={{borderColor: data.temperature >= 30 || data.temperature <= 15 ? "red" : "green"}}>
-                <p>
-                    <strong>Temperature:</strong> <br></br> {data.temperature.toFixed(1)} °C
-                </p>
+            <div className="readingItem">
+                <p className="readingName">Temperature:</p>
+                <p className="readingNumber">{data.temperature.toFixed(1)} °C</p>
+                <p>Indicator:</p>
+                <div id="indicator" style={{width: `${data.temperature}%`, backgroundColor: data.temperature > 26 || data.temperature < 16 ? "red" : "green"}}></div>
             </div>
         </div>
       ) : (
