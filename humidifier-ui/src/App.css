@@ -66,9 +66,18 @@ body,
 
 #indicator {
   height: 10px;
-  background-color: rgba(255,0,0,.5);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin-top: 10px;
+}
+
+#indicator::before {
+  content: '';
+  display: block;
+  width: var(--fill, 0%);
+  height: 10px;
+  background-color: var(--color, black);
+  border-radius: 5px;
 }
 
 /* Settings Container */

@@ -1,4 +1,5 @@
 import { useESP32Data } from "../hooks/ESP32Data";
+import ProgressBar from './progressBar';
 
 export const SensorVisuals = () => {
   const { data, error, ip } = useESP32Data();
@@ -17,13 +18,13 @@ export const SensorVisuals = () => {
                 <p className="readingName">Humidity:</p>
                 <p className="readingNumber">{data.humidity.toFixed(0)} %</p>
                 <p>Indicator:</p>
-                <div id="indicator" style={{width: `${data.humidity}%`, backgroundColor: data.humidity > 60 || data.humidity < 30 ? "red" : "green"}}></div>
+                <ProgressBar data={data.humidity} upper={60} lower={30} />
             </div>
             <div className="readingItem">
                 <p className="readingName">Temperature:</p>
                 <p className="readingNumber">{data.temperature.toFixed(1)} °C</p>
                 <p>Indicator:</p>
-                <div id="indicator" style={{width: `${data.temperature}%`, backgroundColor: data.temperature > 26 || data.temperature < 16 ? "red" : "green"}}></div>
+                <ProgressBar data={data.temperature} upper={28} lower={20} />
             </div>
         </div>
       ) : (
