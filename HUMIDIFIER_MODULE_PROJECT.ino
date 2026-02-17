@@ -23,7 +23,7 @@ void setup() {
 
   pixels.begin();
   pixels.setPixelColor(0, pixels.Color(0, 0, 0));
-  pixels.setBrightness(25);
+  pixels.setBrightness(10);
   pixels.show();
 
   dht.begin();
