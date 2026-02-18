@@ -30,7 +30,7 @@ function App() {
           tempUpper={settings.temperatureUpper}
           tempLower={settings.temperatureLower}
         />
-        <p>🟢 Tolerable conditions 🔴 Severe conditions</p>
+        <p>🟢 Tolerable conditions 🔴 Bad conditions</p>
       </div>
       <Settings settings={settings} setSettings={setSettings} />
     </div>
